@@ -8,8 +8,7 @@ services:
       - "3000:3000"
     depends_on:
       - immer-auch-db
-    networks:
-      - immer_auch_network
+    network_mode: "host"
 
   immer-auch-metabase:
     container_name: immer-auch-metabase
@@ -63,8 +62,7 @@ services:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: password
     command: -p 5432
-    networks:
-      - immer_auch_network
+    network_mode: "host"
 
 volumes:
   immer-auch-db:
