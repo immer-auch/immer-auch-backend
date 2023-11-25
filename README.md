@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://www.polizei-nds.de/startseite/" target="blank"><img src="./logo.jpeg" width="500" alt="Polizei Niedersachsen" /></a>
+  <a href="https://www.polizei-nds.de/startseite/" target="blank"><img src="./logo.jpeg" alt="Polizei Niedersachsen" /></a>
 </p>
 
   <p align="center">In diesem Repository befindet sich das Backend für das Immer-Auch Projekt</p>
@@ -30,5 +30,3 @@ $ npm run start:dev
 # Produktion
 $ npm run start:prod
 ```
-
-<small>Entwickler des Backends - Gökhan Topcu</small>
