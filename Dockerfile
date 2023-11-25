@@ -1,5 +1,5 @@
 # Base image
-FROM --platform=linux/amd64 node:20
+FROM arm64v8/node:20
 # Create app directory
 WORKDIR /usr/src/app
 # A wildcard is used to ensure both package.json AND package-lock.json are copied

@@ -3,9 +3,11 @@ services:
   immer-auch-backend:
     container_name: immer-auch-backend
     image: jailbreakereu/immer-auch-backend:latest
-    platform: linux/amd64
+    #platform: linux/amd64
     ports:
       - "3000:3000"
+    depends_on:
+      - immer-auch-db
     networks:
       - immer_auch_network
 
@@ -16,6 +18,8 @@ services:
     restart: always
     ports:
       - "3001:3000"
+    depends_on:
+      - immer-auch-metabase-db
     volumes:
       - immer-auch-metabase:/metabase-data
     environment:
@@ -47,8 +51,8 @@ services:
 
   immer-auch-db:
     container_name: immer-auch-db
-    image: 'postgres:15.4-alpine3.17'
-    platform: linux/amd64
+    image: 'arm64v8/postgres:15.5'
+    #platform: linux/amd64
     volumes:
       - immer-auch-db:/var/lib/postgresql/data
     restart: always
