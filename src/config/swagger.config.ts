@@ -7,7 +7,7 @@ export function setupSwagger(app: INestApplication) {
     .setTitle('Immer-Auch-Backend')
     .setDescription('Immer-Auch-Backend Description')
     .setVersion('1.0')
-    .addServer('http://localhost:3000/api', 'Local Development')
+    .addServer('http://192.168.100.100:3000/api', 'Local Development')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   // 'swagger' is the path you can access the docs from
