@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { FakeShopSource } from './fake-shop.entity';
 
 export class ReportFakeShopDto {
   @ApiProperty({
@@ -6,6 +7,18 @@ export class ReportFakeShopDto {
     description: 'Die URL des FakeShops',
   })
   url: string;
+
+  @ApiProperty({
+    enum: FakeShopSource,
+    isArray: true,
+    example: [
+      FakeShopSource.Unknown,
+      FakeShopSource.Crawler,
+      FakeShopSource.Extension,
+      FakeShopSource.Website,
+    ],
+  })
+  source: FakeShopSource;
 }
 
 export class ApproveFakeShopDto {

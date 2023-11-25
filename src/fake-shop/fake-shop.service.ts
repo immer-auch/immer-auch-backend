@@ -70,6 +70,7 @@ export class FakeShopService {
     const fakeShop = await this.repository.save({
       domain: domain,
       reportCount: 1,
+      source: dto.source,
     });
     await this.fakeShopMetadataService.createFakeShopMetadata(fakeShop);
     await this.fakeShopReportTracingService.traceFakeShopReport(
