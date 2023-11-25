@@ -2,7 +2,7 @@ version: '3'
 services:
   immer-auch-backend:
     container_name: immer-auch-backend
-    image: immer-auch-backend:latest
+    image: jailbreakereu/immer-auch-backend:latest
     platform: linux/amd64
     ports:
       - "3000:3000"
