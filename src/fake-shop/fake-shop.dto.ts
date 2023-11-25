@@ -3,7 +3,7 @@ import { ApiProperty } from '@nestjs/swagger';
 export class ReportFakeShopDto {
   @ApiProperty({
     type: String,
-    description: 'Address of the FakeShop which should be reported',
+    description: 'Die URL des FakeShops',
   })
   url: string;
 }
@@ -11,7 +11,7 @@ export class ReportFakeShopDto {
 export class ApproveFakeShopDto {
   @ApiProperty({
     type: Number,
-    description: 'The Id of the FakeShop which should be marked as approved',
+    description: 'Die Id des FakeShops',
   })
   fakeShopId: number;
 }
@@ -19,7 +19,7 @@ export class ApproveFakeShopDto {
 export class DeclineFakeShopDto {
   @ApiProperty({
     type: Number,
-    description: 'The Id of the FakeShop which should be marked as declined',
+    description: 'Die Id des FakeShops',
   })
   fakeShopId: number;
 }
@@ -27,7 +27,7 @@ export class DeclineFakeShopDto {
 export class FakeShopSuspiciousCheckDto {
   @ApiProperty({
     type: String,
-    description: 'Address of the FakeShop which should be checked',
+    description: 'Die URL des FakeShops',
   })
   url: string;
 }
