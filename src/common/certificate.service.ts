@@ -9,7 +9,7 @@ export class CertificateService {
       host: domain,
       port: 443,
     };
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       const socket = tls.connect(options, () => {
         const certificate = socket.getPeerCertificate();
         if (!certificate || Object.keys(certificate).length === 0) {
@@ -19,7 +19,7 @@ export class CertificateService {
         }
         socket.end();
       });
-      socket.on('error', (error) => reject(error));
+      socket.on('error', () => resolve(undefined));
     });
   }
 }

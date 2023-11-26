@@ -39,10 +39,11 @@ export class FakeShopMetadataService {
   ): Promise<FakeShopMetadata> {
     const domain = fakeShop.domain;
     const whois = await this.whoIsService.getWhoIsInformation(domain);
-    const certificate = await this.certificateService.getCertificate(domain);
+    //const certificate = await this.certificateService.getCertificate(domain);
     const entity: Partial<FakeShopMetadata> = {
       whois: JSON.stringify(whois),
-      sslCertificate: JSON.stringify(certificate),
+      sslCertificate: undefined,
+      //sslCertificate: JSON.stringify(certificate),
       fakeShop: fakeShop,
     };
     return await this.repository.save(entity);

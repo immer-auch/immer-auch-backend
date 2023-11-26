@@ -20,7 +20,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         autoLoadEntities: true,
         synchronize: true,
         dropSchema: false,
-        logging: true,
+        logging: false,
       }),
       async dataSourceFactory(options) {
         if (!options) {

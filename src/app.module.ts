@@ -5,6 +5,8 @@ import { ConfigModule } from '@nestjs/config';
 import { FakeShopMetadataModule } from './fake-shop-metadata/fake-shop-metadata.module';
 import { CommonModule } from './common/common.module';
 import { FakeShopReportTracingModule } from './fake-shop-report-tracing/fake-shop-report-tracing.module';
+import { KleinanzeigenModule } from './kleinanzeigen/kleinanzeigen.module';
+import { DnsModule } from './dns/dns.module';
 
 @Module({
   imports: [
@@ -16,6 +18,8 @@ import { FakeShopReportTracingModule } from './fake-shop-report-tracing/fake-sho
     FakeShopModule,
     FakeShopMetadataModule,
     FakeShopReportTracingModule,
+    KleinanzeigenModule,
+    DnsModule,
   ],
   controllers: [],
   providers: [],
