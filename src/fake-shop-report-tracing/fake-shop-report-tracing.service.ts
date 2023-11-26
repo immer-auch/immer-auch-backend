@@ -29,6 +29,18 @@ export class FakeShopReportTracingService {
   public async suspiciousCheck(
     domain: string,
   ): Promise<FakeShopSuspiciousCheckResult> {
+    const where = { fakeShop: { domain: Equal(domain) } };
+    const exists = await this.repository.exist({
+      where: where,
+    });
+    if (!exists) {
+      return {
+        suspicious: false,
+        totalCount: 0,
+        timeLastReport: null,
+        timeFirstReport: null,
+      };
+    }
     const count = await this.repository.countBy({
       fakeShop: {
         domain: Equal(domain),
@@ -39,7 +51,7 @@ export class FakeShopReportTracingService {
       ),
     });
     const reports = await this.repository.find({
-      where: { fakeShop: { domain: Equal(domain) } },
+      where: where,
       order: { timeCreated: 'ASC' },
     });
     return {
