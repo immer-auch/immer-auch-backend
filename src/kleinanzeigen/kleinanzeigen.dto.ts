@@ -1,6 +1,8 @@
 import { ApiProperty } from '@nestjs/swagger';
 
 export class KleinanzeigenCheckDto {
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Die Url des Produktes auf Ebay Kleinanzeigen',
+  })
   url: string;
 }

@@ -7,6 +7,7 @@ import { CommonModule } from './common/common.module';
 import { FakeShopReportTracingModule } from './fake-shop-report-tracing/fake-shop-report-tracing.module';
 import { KleinanzeigenModule } from './kleinanzeigen/kleinanzeigen.module';
 import { DnsModule } from './dns/dns.module';
+import { RealShopModule } from './real-shop/real-shop.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { DnsModule } from './dns/dns.module';
     FakeShopReportTracingModule,
     KleinanzeigenModule,
     DnsModule,
+    RealShopModule,
   ],
   controllers: [],
   providers: [],
